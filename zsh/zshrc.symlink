@@ -1,8 +1,9 @@
 # shortcut to this dotfiles path is $ZSH
-export ZSH=$HOME/.dotfiles
+export DotfilesDir=$HOME/projects/dotfiles # 统一替换$ZSH
+# export DotfilesDir="$(dirname "$(readlink -f "$0")")" # Todo 更好的智能无关的 reference
 
 # your project folder that we can `c [tab]` to
-export PROJECTS=~/Code
+export PROJECTS=~/projects
 
 # Stash your environment variables in ~/.localrc. This means they'll stay out
 # of your main dotfiles repository (which may be public, like this one), but
@@ -14,7 +15,9 @@ fi
 
 # all of our zsh files
 typeset -U config_files
-config_files=($ZSH/**/*.zsh)
+# config_files=($DotfilesDir/**/*.zsh) # Siva 不支持跨层级
+config_files=($DotfilesDir/*/*.zsh)
+
 
 # load the path files
 for file in ${(M)config_files:#*/path.zsh}
@@ -25,17 +28,18 @@ done
 # load everything but the path and completion files
 for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
 do
+  # echo "source file $file"
   source $file
 done
 
-# initialize autocomplete here, otherwise functions won't be loaded
-autoload -U compinit
-compinit
+# # initialize autocomplete here, otherwise functions won't be loaded
+# autoload -U compinit
+# compinit
 
-# load every completion after autocomplete loads
-for file in ${(M)config_files:#*/completion.zsh}
-do
-  source $file
-done
+# # load every completion after autocomplete loads
+# for file in ${(M)config_files:#*/completion.zsh}
+# do
+#   source $file
+# done
 
 unset config_files
