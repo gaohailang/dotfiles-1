@@ -1,0 +1,248 @@
+Host sivagao.ufovps
+  Hostname 118.193.220.122
+  User sivagao
+
+Host sivagao.is26
+  Hostname 106.185.25.59
+  User sivagao
+  Port 64656
+
+Host sivagao.aws
+  Hostname 54.169.236.165
+  User ubuntu
+  IdentityFile ~/dev/aws-demo1.pem
+
+Host macpro.gfsz
+  Hostname 10.2.237.106
+  User sivagao
+
+Host test.gf
+  Hostname 10.2.114.30
+  User gf
+
+Host devaws.gf
+  Hostname 54.222.242.232
+  User ubuntu
+  IdentityFile ~/dev/gf-jifen.pem
+  ForwardAgent yes
+
+Host relay.clickegg
+  Hostname 10.2.114.30
+  User gf
+
+Host dev.chatgf
+  Hostname 54.222.210.35
+  User ubuntu
+  IdentityFile ~/dev/parrot-product-key.pem
+
+Host dev2.chatgf
+  Hostname 54.222.171.24
+  User ubuntu
+  IdentityFile ~/dev/parrot-product-key.pem
+
+Host jixiao.clickegg
+  Hostname 54.223.248.49
+  User ubuntu
+
+Host prod1.clickegg
+  Hostname 10.2.89.41
+  User gf
+  ForwardAgent yes
+  ProxyCommand ssh relay.clickegg nc %h %p
+
+Host prod2.clickegg
+  Hostname 10.2.89.42
+  User gf
+  ForwardAgent yes
+  ProxyCommand ssh relay.clickegg nc %h %p
+
+Host prod3.clickegg
+  Hostname 10.2.89.43
+  User gf
+  ForwardAgent yes
+  ProxyCommand ssh relay.clickegg nc %h %p
+
+Host prod4.clickegg
+  Hostname 10.2.89.44
+  User gf
+  ForwardAgent yes
+  ProxyCommand ssh relay.clickegg nc %h %p
+
+Host prod5.clickegg
+  Hostname 10.2.89.45
+  User gf
+  ForwardAgent yes
+  ProxyCommand ssh relay.clickegg nc %h %p
+
+Host prod6.clickegg
+  Hostname 10.2.89.46
+  User gf
+  ForwardAgent yes
+  ProxyCommand ssh relay.clickegg nc %h %p
+
+Host test1.clickegg
+  Hostname 10.2.113.69
+  User gf
+  ForwardAgent yes
+  ProxyCommand ssh relay.clickegg nc %h %p
+
+Host test2.clickegg
+  Hostname 10.2.113.70
+  User gf
+  ForwardAgent yes
+  ProxyCommand ssh relay.clickegg nc %h %p
+
+Host nc-prod1.clickegg
+  Hostname 192.168.202.51
+  Port 22
+  User gf
+  ForwardAgent yes
+  ProxyCommand ssh test.gf nc %h %p
+
+Host nc-prod2.clickegg
+  Hostname 192.168.202.52
+  Port 22
+  User gf
+  ForwardAgent yes
+  ProxyCommand ssh test.gf nc %h %p
+
+Host nc-test.clickegg
+  Hostname 10.2.122.215
+  User root
+
+Host nc-test.nginx.clickegg
+  Hostname 10.2.121.240
+  User root
+
+Host dev.clickegg
+    Hostname 10.2.122.97
+    User ubuntu
+
+Host test.mongo.clickegg
+  Hostname 10.71.137.101
+  User ubuntu
+  IdentityFile ~/dev/gf-jifen.pem
+  ForwardAgent yes
+  ProxyCommand ssh relay.cloud.clickegg nc %h %p
+
+  Host parrot-mongo-mongos1-a
+  HostName 54.223.86.86
+  Port 22
+  User ubuntu
+  IdentityFile ~/dev/gf-mongodb-aws.pem
+
+  Host parrot-mongo-mongos2-b
+  HostName 54.222.220.191
+  Port 22
+  User ubuntu
+  IdentityFile ~/dev/gf-mongodb-aws.pem
+
+  Host parrot-mongo-shard1-arbiter-a
+  HostName 54.223.58.77
+  Port 22
+  User ubuntu
+  IdentityFile ~/dev/gf-mongodb-aws.pem
+
+  Host parrot-mongo-shard1-master-a
+  HostName 54.223.88.72
+  Port 22
+  User ubuntu
+  IdentityFile ~/dev/gf-mongodb-aws.pem
+
+  Host parrot-mongo-shard1-slave-b
+  HostName 54.223.86.121
+  Port 22
+  User ubuntu
+  IdentityFile ~/dev/gf-mongodb-aws.pem
+
+  Host parrot-mongo-shard2-arbiter-b
+  HostName 54.223.87.218
+  Port 22
+  User ubuntu
+  IdentityFile ~/dev/gf-mongodb-aws.pem
+
+  Host parrot-mongo-shard2-master-a
+  HostName 54.223.88.61
+  Port 22
+  User ubuntu
+  IdentityFile ~/dev/gf-mongodb-aws.pem
+
+  Host parrot-mongo-shard2-slave-b
+  HostName 54.223.88.33
+  Port 22
+  User ubuntu
+  IdentityFile ~/dev/gf-mongodb-aws.pem
+
+  Host parrot-mongo-shard3-arbiter-a
+  HostName 54.223.64.248
+  Port 22
+  User ubuntu
+  IdentityFile ~/dev/gf-mongodb-aws.key
+
+  Host parrot-mongo-shard3-master-a
+  HostName 54.223.89.140
+  Port 22
+  User ubuntu
+  IdentityFile ~/dev/gf-mongodb-aws.pem
+
+  Host parrot-mongo-shard3-slave-b
+  HostName 54.223.45.96
+  Port 22
+  User ubuntu
+  IdentityFile ~/dev/gf-mongodb-aws.pem
+
+  Host parrot-mongo-shard4-arbiter-b
+  HostName 54.223.49.157
+  Port 22
+  User ubuntu
+  IdentityFile ~/dev/gf-mongodb-aws.key
+
+  Host parrot-mongo-shard4-master-a
+  HostName 54.223.81.67
+  Port 22
+  User ubuntu
+  IdentityFile ~/dev/gf-mongodb-aws.pem
+
+  Host parrot-mongo-shard4-slave-b
+  HostName 54.223.58.236
+  Port 22
+  User ubuntu
+  IdentityFile ~/dev/gf-mongodb-aws.pem
+
+  Host parrot-mongo-config1-a
+  HostName 54.223.88.60
+  Port 22
+  User ubuntu
+  IdentityFile ~/dev/gf-mongodb-aws.key
+
+  Host parrot-mongo-config2-a
+  HostName 54.223.88.58
+  Port 22
+  User ubuntu
+  IdentityFile ~/dev/gf-mongodb-aws.key
+
+  Host parrot-mongo-config3-b
+  HostName 54.223.88.87
+  Port 22
+  User ubuntu
+  IdentityFile ~/dev/gf-mongodb-aws.pem
+
+  Host parrot-redis-master-a
+  HostName 54.222.199.212
+  Port 22
+  User ubuntu
+  #IdentityFile ~/dev/gf-mongodb-aws.key
+  IdentityFile ~/dev/gf-parrot-redis.pem
+
+  Host parrot-redis-slave-a
+  HostName 54.222.208.48
+  Port 22
+  User ubuntu
+  #IdentityFile ~/dev/gf-mongodb-aws.key
+  IdentityFile ~/dev/gf-parrot-redis.pem
+
+  Host aws-monitor
+  HostName 54.223.248.49
+  Port 22
+  User ubuntu
+  IdentityFile ~/dev/gf-mongodb-aws.pem
