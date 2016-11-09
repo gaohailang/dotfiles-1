@@ -1,3 +1,25 @@
+
+
+zz_ohmyzsh - $ZSH 替换（避免冲突修改dotfiles中的）然后生效问题_zz 前缀_
+引入新主题(import_paul中)
+
+git clone projects/dotfiles
+script/bootstrap
+zz_ohmyzsh/install && chsh -s /bin/zsh
+
+scp ~/.ssh/xx target:~/.ssh/
+scp import_paul中/terminal
+
+git submodule update --init --recursive
+
+Todo:
+
+- 代码高亮（cat时候 ？
+- 其他功能等
+- 
+
+
+
 # holman does dotfiles
 
 Your dotfiles are how you personalize your system. These are mine.
