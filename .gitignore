@@ -10,4 +10,3 @@ atom.symlink/blob-store
 atom.symlink/recovery
 
 git/gitconfig.local.symlink
-import_paul/terminal
