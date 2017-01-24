@@ -1,5 +1,8 @@
 # curr="/Users/ghlndsl/projects/dotfiles/import_paul"
 curr=$(dirname "$0")
+
+autoload -Uz promptinit && promptinit
+
 # Load main files.
 # echo "Load start\t" $(gdate "+%s-%N")
 source "$curr/terminal/startup.sh"
@@ -12,5 +15,4 @@ autoload -U colors && colors
 
 # Load and execute the prompt theming system.
 fpath=("$curr/terminal" $fpath)
-autoload -Uz promptinit && promptinit
 # prompt 'paulmillr'

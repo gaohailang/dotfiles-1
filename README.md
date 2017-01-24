@@ -3,11 +3,14 @@
 zz_ohmyzsh - $ZSH 替换（避免冲突修改dotfiles中的）然后生效问题_zz 前缀_
 引入新主题(import_paul中)
 
-git clone projects/dotfiles
+git clone https://github.com/gaohailang/dotfiles-1 ~/projects/dotfiles
 script/bootstrap
 zz_ohmyzsh/install && chsh -s /bin/zsh
 
-scp ~/.ssh/xx target:~/.ssh/
+scp ~/.ssh/id_rsa.pub devaws.gf:~/.ssh/
+scp ~/.ssh/id_rsa devaws.gf:~/.ssh/
+
+
 scp import_paul中/terminal
 
 git submodule update --init --recursive
@@ -17,6 +20,22 @@ Todo:
 - 代码高亮（cat时候 ？
 - 其他功能等
 - 
+
+
+前提：
+zsh --version（安装和 sudo apt-get install zsh
+curl or wget should be installed
+git should be installed
+
+Todo:
+ssh 目录覆盖的问题（authorized host等
+集成 ohmyzsh，选主题，插件 - export ZSH="$HOME/.dotfiles/oh-my-zsh"; sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+zshrc 配置：
+ZSH_THEME="robbyrussell"
+
+设置和git/gitconfig.local.symlink
+
 
 
 
